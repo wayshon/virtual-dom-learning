@@ -1,0 +1,13 @@
+﻿html,body,#app {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  min-height: 100%;
+  text-align: center;
+}
+
+/* .wrapper div, .wrapper button {
+  margin: 5px auto;
+} */
