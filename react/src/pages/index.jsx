@@ -58,6 +58,18 @@ class Index extends Component {
         this.setState({ list })
     }
 
+    randomRank() {
+        let { list } = this.state;
+        let len = list.length, temp;
+        while(len--) {
+            let index = parseInt(Math.random() * (len + 1));
+            temp = list[index];
+            list[index] = list[len];
+            list[len] = temp;
+        }
+        this.setState({ list })
+    }
+
     render() {
         return (
             <div className="wrapper">
@@ -69,6 +81,8 @@ class Index extends Component {
                 <button onClick={this.push.bind(this)}>push</button>
                 <br/>
                 <button onClick={this.pop.bind(this)}>pop</button>
+                <br/>
+                <button onClick={this.randomRank.bind(this)}>randomRank</button>
                 <div style={{marginTop: '30px'}}>
                     {
                         this.state.list.map(v => (<Cell name={v.name} key={v.id} />))
